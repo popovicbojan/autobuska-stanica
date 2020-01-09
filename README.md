@@ -5,7 +5,7 @@ Ovo je mala web aplikacija za autobusku stanicu. Moguce je pregledati dostupne l
 Pre pokretanje aplikacije potrebno je pokrenuti ddl.sql skriptu iz foldera sql u programu MySQL kako bi se generisala baza podataka za aplikaciju. Projekat je radjen sa MySQL verzijom 8, i dependency za tu verziju je podesen u pom.xml fajlu, ukoliko imate instaliranu drugu verziju potrebno je da editujete pom.xml fajl i da unesete zeljenu verziju. Ukoliko zelite da radite sa postojecom bazom onda u applicaion.properties podesite parametre za zeljenu bazu. 
 
 ## Pokretanje aplikacije
-U komandnom prozoru otvoriti korijensku datoteku projekta i pokrenuti komandu: <br>
+U komandnom prozoru otvoriti root datoteku projekta i pokrenuti komandu: <br>
 <b>mvn spring-boot:run</b>
 <br>
 Aplikacija se moze pokrenuti i iz Eclipse IDE.
