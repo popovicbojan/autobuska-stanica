@@ -1,0 +1,18 @@
+<div>
+<table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Naziv prevoznik</th>
+                <th>Destinacija</th>
+                <th>Broj mesta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="r in rezervacije">
+                <td>{{r.nazivPrevoznika}}</td>
+                <td>{{r.destinacija}}</td>
+                <td>{{r.brojMesta}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

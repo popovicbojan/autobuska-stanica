@@ -1,0 +1,85 @@
+<div>
+    <h1>{{message}}</h1>
+    <br>
+    <br>
+    <form>
+        <div class="form-group">
+            <label>Broj mesta</label>
+            <input class="form-control" ng-model="novaLinija.brojMesta" />
+        </div>
+
+        <div class="form-group">
+            <label>Cena karte</label>
+            <input class="form-control" ng-model="novaLinija.cenaKarte" />
+        </div>
+
+        <div class="form-group">
+            <label>Destinacija</label>
+            <input class="form-control" ng-model="novaLinija.destinacija" />
+        </div>
+
+        <div class="form-group">
+            <label>Vreme polaska</label>
+            <input class="form-control" ng-model="novaLinija.vremePolaska" />
+        </div>
+
+        <div>
+            <label>Prevoznik</label>
+            <select ng-model="novaLinija.idPrevoznika">
+                <option ng-repeat="p in prevoznici" value="{{p.id}}">{{p.naziv}}
+                </option>
+            </select>
+        </div>
+
+        <button class="btn btn-secondary" ng-click="doAdd()">Dodaj</button>
+    </form>
+    <br>
+    <br>
+
+    <form>
+        <div class="form-group">
+            <label for="sdestinacija">Destinacija</label>
+            <input ng-model="sParams.destinacija" id="sdestinacija" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="sprevoznik">Prevoznik</label>
+            <input ng-model="sParams.prevoznik" id="sprevoznik" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="smaxcena">Maksimalna cena</label>
+            <input ng-model="sParams.maxCena" id="smaxcena" class="form-control">
+        </div>
+        <button ng-click="doSearch()" class="btn btn-primary">Pretrazi</button>
+    </form>
+    <br>
+    <br>
+    <div class="btn-group float-right">
+        <button ng-disabled="pageNum == 0" ng-click="changePage(-1)" class="btn btn-info">Previous</button>
+        <button ng-disabled="pageNum == totalPages - 1" ng-click="changePage(1)" class="btn btn-info">Next</button>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Naziv prevoznik</th>
+                <th>Destinacija</th>
+                <th>Broj mesta</th>
+                <th>Vreme polaska</th>
+                <th>Cena karte</th>
+                <th colspan="3">Funkcionalnosti</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="l in linije">
+                <td>{{l.nazivPrevoznika}}</td>
+                <td>{{l.destinacija}}</td>
+                <td>{{l.brojMesta}}</td>
+                <td>{{l.vremePolaska}}</td>
+                <td>{{l.cenaKarte}}</td>
+                <td><button class="btn btn-primary" ng-click="goToRezervisi(l.id)">Rezervisi</button></td>
+                <td><button class="btn btn-dark" ng-click="goToEdit(l.id)">Edit</button></td>
+                <td><button class="btn btn-danger" ng-click="doDelete(l.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
